@@ -1,0 +1,28 @@
+eureka:
+    instance:
+        hostname: 106.54.194.33
+        prefer-ip-address: true
+    client:
+        serviceUrl:
+            defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+feign:
+    hystrix:
+        enabled: false
+    client:
+        config:
+            default:
+                connectTimeout: 5000
+                readTimeout: 10000
+logging:
+    level:
+        io:
+            seata: info
+server:
+    port: 8183
+spring:
+    application:
+        name: business-server
+    cloud:
+        alibaba:
+            seata:
+                tx-service-group: fsp_tx_group
