@@ -14,14 +14,14 @@ public interface OrderApi {
     /**
      * a创建订单
      */
-    @RequestMapping("/orders/create")
+    @RequestMapping(value = "/orders/create", method = RequestMethod.POST)
     String create(@RequestBody OrdersEntity ordersEntity);
     
     /**
      * a正常创建订单
      * @return
      */
-    @RequestMapping("/orders/createnormal")
+    @RequestMapping(value = "/orders/createnormal", method = RequestMethod.POST)
     String createnormal(@RequestBody OrdersEntity ordersEntity);
     
 }

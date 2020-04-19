@@ -15,7 +15,7 @@ public class BusinessController {
 //    private OrdersEntity ordersEntity;
     
    @GetMapping("createorder")
-   public String create(@RequestParam("userId") Integer userid, 
+   public String create(@RequestParam("userid") Integer userid, 
    @RequestParam("productid") Integer productid, @RequestParam("countnum") Integer countnum,
    @RequestParam("money") Integer money, @RequestParam("status") String status){
 	    OrdersEntity ordersEntity = new OrdersEntity();
