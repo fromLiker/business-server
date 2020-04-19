@@ -8,7 +8,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
- * aa订单服务
+ * aaa订单服务
  * @author Liker
  */
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
