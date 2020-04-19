@@ -18,14 +18,9 @@ public class BusinessService {
     
     // a不加注解则不会发生事务回滚
     @GlobalTransactional(name = "fsp-create-order", rollbackFor = Exception.class)
-	public void createorder(OrdersEntity ordersEntity, String status) {
-        LOGGER.info("------->交易开始");
-        if(status.equals("normal")){
-            orderApi.createnormal(ordersEntity);
-        }else{
-            orderApi.create(ordersEntity);
-        }
-		LOGGER.info("------->交易结束");
-	}
+	public void create(OrdersEntity ordersEntity) {
+        LOGGER.info("------->create order start to request orderApi");
+        orderApi.create(ordersEntity);
+    }
 	  
 }

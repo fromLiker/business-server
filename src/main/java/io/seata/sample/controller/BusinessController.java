@@ -11,20 +11,26 @@ public class BusinessController {
 	
     @Autowired
 	private BusinessService businessService;
-//	  @Autowired
+//	@Autowired
 //    private OrdersEntity ordersEntity;
+
+    @PostMapping("create")
+    public String create(@RequestBody OrdersEntity ordersEntity) {
+        businessService.create(ordersEntity);
+        return "Create order failed";
+    }
     
-   @GetMapping("createorder")
-   public String create(@RequestParam("userid") Integer userid, 
-   @RequestParam("productid") Integer productid, @RequestParam("countnum") Integer countnum,
-   @RequestParam("money") Integer money, @RequestParam("status") String status){
-	    OrdersEntity ordersEntity = new OrdersEntity();
-		ordersEntity.setUserid(userid);
-		ordersEntity.setProductid(productid);
-		ordersEntity.setCountnum(countnum);
-		ordersEntity.setMoney(money);
-		businessService.createorder(ordersEntity, status);
-        return "Create order success";
-   }
+//    @GetMapping("createorder")
+//    public String create(@RequestParam("userid") Integer userid, 
+//    @RequestParam("productid") Integer productid, @RequestParam("countnum") Integer countnum,
+//    @RequestParam("money") Integer money, @RequestParam("status") String status){
+// 	    OrdersEntity ordersEntity = new OrdersEntity();
+// 		ordersEntity.setUserid(userid);
+// 		ordersEntity.setProductid(productid);
+// 		ordersEntity.setCountnum(countnum);
+// 		ordersEntity.setMoney(money);
+// 		businessService.createorder(ordersEntity, status);
+//         return "Create order success";
+//    }
 
 }

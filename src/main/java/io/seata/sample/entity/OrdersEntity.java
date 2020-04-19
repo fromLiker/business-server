@@ -2,6 +2,18 @@ package io.seata.sample.entity;
 
 public class OrdersEntity {
 
+	private Integer id;
+
+    private Integer userid;
+
+    private Integer productid;
+
+    private Integer countnum;
+
+	private Integer money;
+
+	private Integer status;
+	
     public Integer getId() {
 		return id;
 	}
@@ -42,14 +54,12 @@ public class OrdersEntity {
 		this.money = money;
 	}
 
-	private Integer id;
+	public Integer getStatus() {
+		return status;
+	}
 
-    private Integer userid;
-
-    private Integer productid;
-
-    private Integer countnum;
-
-	private Integer money;
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
 
 }
