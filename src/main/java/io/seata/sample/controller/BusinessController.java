@@ -11,13 +11,14 @@ public class BusinessController {
 	
     @Autowired
 	private BusinessService businessService;
-	@Autowired
-    private OrdersEntity ordersEntity;
+//	@Autowired
+//    private OrdersEntity ordersEntity;
     
    @GetMapping("createorder")
    public String create(@RequestParam("userId") Integer userid, 
    @RequestParam("productid") Integer productid, @RequestParam("countnum") Integer countnum,
    @RequestParam("money") Integer money, @RequestParam("status") String status){
+	    OrdersEntity ordersEntity = new OrdersEntity();
 		ordersEntity.setUserid(userid);
 		ordersEntity.setProductid(productid);
 		ordersEntity.setCountnum(countnum);
